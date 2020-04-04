@@ -7,7 +7,9 @@ namespace App9.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,        
+        Map,
+            Exit
     }
     public class HomeMenuItem
     {

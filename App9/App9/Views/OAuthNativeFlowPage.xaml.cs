@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Auth;
 using System.Net.Http;
-
+using App9.Views;
 
 namespace OAuthNativeFlow
 {
@@ -14,13 +14,23 @@ namespace OAuthNativeFlow
         Account account;
         [Obsolete]
         AccountStore store;
+        protected async override void OnAppearing() {
+            if (AuthenticationState.Authenticator != null)
+            {
+                await Navigation.PushAsync(new MainPage());
+            }
 
+        }
         [Obsolete]
         public OAuthNativeFlowPage()
         {
             InitializeComponent();
-
+            
             store = AccountStore.Create();
+            
+
+
+
         }
 
         [Obsolete]
@@ -181,7 +191,12 @@ namespace OAuthNativeFlow
                     Application.Current.Properties.Add("ProfilePicture", user.Picture);
 
                     //await Navigation.PushAsync(new ProfilePage());
-                    await Navigation.PushAsync(new App9.Views.MainPage());
+                 
+                 //       await Navigation.PushAsync(new OAuthNativeFlowPage());
+                
+                await Navigation.PushAsync(new App9.Views.MainPage());
+                 await Navigation.PopAsync();
+
                 } 
 			}
 		}

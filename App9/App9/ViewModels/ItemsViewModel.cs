@@ -33,9 +33,7 @@ namespace App9.ViewModels
         {
             if (IsBusy)
                 return;
-
             IsBusy = true;
-
             try
             {
                 Items.Clear();

@@ -15,25 +15,30 @@ namespace App9.Views
     {
         ItemDetailViewModel viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
+        public  ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
 
             BindingContext = this.viewModel = viewModel;
         }
-
+        
         public ItemDetailPage()
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new Prompt
             {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
+                WorkName = "Item 1",
+                Id= 0
 
+            };
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
+        }
+
+        private void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,9 @@ namespace App9.Views
     [DesignTimeVisible(false)]
     public partial class MainPage : MasterDetailPage
     {
+        
         Dictionary<int, NavigationPage> MenuPages = new Dictionary<int, NavigationPage>();
+        
         public MainPage()
         {
             InitializeComponent();
@@ -22,9 +24,13 @@ namespace App9.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Browse, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.About, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Map, (NavigationPage)Detail);
+            MenuPages.Add((int)MenuItemType.Exit, (NavigationPage)Detail);
+
         }
 
-        public async Task NavigateFromMenu(int id)
+        public  async Task NavigateFromMenu(int id)
         {
             if (!MenuPages.ContainsKey(id))
             {
@@ -36,6 +42,14 @@ namespace App9.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.Map:
+                        MenuPages.Add(id, new NavigationPage(new Maps.MyMapPage()));
+                        break;
+                    case (int)MenuItemType.Exit:
+                        DisplayAlert("Success", "Prompt Save Successfully", "OK");
+                        //MenuPages.Add(id, new NavigationPage(new AboutPage()));
+                        //что то тут ддолжно происходить
+                        break;
                 }
             }
 
@@ -46,7 +60,8 @@ namespace App9.Views
                 Detail = newPage;
 
                 if (Device.RuntimePlatform == Device.Android)
-                    await Task.Delay(100);
+                    await Task.Delay(200);
+                    
 
                 IsPresented = false;
             }

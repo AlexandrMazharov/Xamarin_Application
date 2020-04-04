@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="App9.Views.ItemDraftDetailPage1"
+             xmlns:resources= "clr-namespace:App9.Resx"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{x:Static resources:Resource.text_sent}" Clicked="ToolbarUpload_Clicked" />
+        <ToolbarItem Text="{x:Static resources:Resource.text_dell}" Clicked="ToolbarDell_Clicked" />
+        <ToolbarItem Text="{x:Static resources:Resource.text_change}" Clicked="Toolbarhange_Clicked" />
+        
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+                <Label Text="{x:Static resources:Resource.text_draft}"/>
+                <Label Text="{x:Static resources:Resource.text_work_name}" FontSize="Medium"/>
+                <Label Text="{Binding Prompt.WorkName}" d:Text="WorkName???" FontSize="Small"/>
+
+                <Label Text="{x:Static resources:Resource.text_organization}" FontSize="Medium"/>
+                <Label Text="{Binding Prompt.Organization}" d:Text="Organization???" FontSize="Small"/>
+
+                <Label Text="{x:Static resources:Resource.text_autors}" FontSize="Medium"/>
+                <Label Text="{Binding Prompt.Fio}" d:Text="Fio???" FontSize="Small"/>
+
+
+                <Label Text="{x:Static resources:Resource.text_direction}" FontSize="Medium"/>
+                <Label Text="{Binding Prompt.Direction}" d:Text="Direction???" FontSize="Small"/>
+
+                <Label Text="{x:Static resources:Resource.text_agreed}" FontSize="Medium"/>
+                <Label Text="{Binding Prompt.Agreed}" d:Text="Agreed???" FontSize="Small"/>
+
+                <Label Text="{x:Static resources:Resource.text_works}" FontSize="Medium"/>
+                <Label Text="{Binding Prompt.LinkFile}" d:Text="LinkFile???" FontSize="Small"/>
+
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>
