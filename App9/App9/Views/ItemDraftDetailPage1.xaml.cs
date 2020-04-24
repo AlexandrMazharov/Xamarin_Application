@@ -65,8 +65,19 @@ namespace App9.Views
 
 
         }
-        
-        private async void deleteFromSqlite()
+        protected void TapDownloadFile(object sender, EventArgs e)
+        {
+            try
+            {
+                Device.OpenUri(new Uri(this.viewModel.Prompt.LinkFile));
+            }
+            catch
+            {
+                DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_link_error, Resx.Resource.text_ok);
+            }
+        }
+
+            private async void deleteFromSqlite()
         {
             int id = this.viewModel.Prompt.Id;
             App.Database.DeleteItem(id);

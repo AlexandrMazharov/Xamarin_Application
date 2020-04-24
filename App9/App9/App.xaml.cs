@@ -31,9 +31,13 @@ namespace App9
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            MainPage = new NavigationPage(new OAuthNativeFlowPage());
-            //MainPage = new NavigationPage( new OAuthNativeFlowPage());
+            //await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            //  MainPage = new OAuthNativeFlowPage();
             
+            MainPage = new NavigationPage(new OAuthNativeFlowPage());
+            
+            //MainPage = new NavigationPage( new OAuthNativeFlowPage());
+
         }
 
         protected override void OnStart()

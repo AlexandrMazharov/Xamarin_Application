@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="App9.Views.NewItemPage"
                   xmlns:resources= "clr-namespace:App9.Resx"
-             Title="New Item">
+             Title="{x:Static resources:Resource.text_newApplication}">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{x:Static resources:Resource.text_cancel}" Clicked="Cancel_Clicked" />
@@ -22,22 +22,25 @@
 
                 <Label Text="{x:Static resources:Resource.text_your_request}" FontSize="Medium" />
                 <Label Text="{x:Static resources:Resource.text_autors}" FontSize="Small" />
-            <Entry Text="{Binding Item.Text}" x:Name="entryFio" d:Text="FIO " FontSize="Small" />
+            <Entry  x:Name="entryFio" d:Text="FIO " FontSize="Small" />
+                <!--<Entry Text="{Binding Item.Text}" x:Name="entryFio" d:Text="FIO " FontSize="Small" />-->
 
                 <Label Text="{x:Static resources:Resource.text_organization}" FontSize="Small" />
-            <Entry Text="{Binding Item.Text}" x:Name="entryOrg" d:Text="Organization" FontSize="Small" />
-
+            <Entry  x:Name="entryOrg" d:Text="Organization" FontSize="Small" />
+                <!--<Entry Text="{Binding Item.Text}" x:Name="entryOrg" d:Text="Organization" FontSize="Small" />-->
+            
                 <Label Text="{x:Static resources:Resource.text_direction}" FontSize="Small" />
                 <Picker x:Name="picker"                                                 
                         Title="{x:Static resources:Resource.text_choose_direction}">
-                
-                
-            </Picker>
+                </Picker>
 
                 <Label Text="{x:Static resources:Resource.text_work_name}" FontSize="Small" />
-            <Entry Text="{Binding Item.Text}" x:Name="entryNameWork" d:Text="WorkName" FontSize="Small" />
-                <Button Text ="выбрать файл" Clicked="BtnPick_Clicked"/>
+                <!--<Entry Text="{Binding Item.Text}" x:Name="entryNameWork" d:Text="WorkName" FontSize="Small" />-->
+                <Entry  x:Name="entryNameWork" d:Text="WorkName" FontSize="Small" />
+            
+                <Button Text ="{x:Static resources:Resource.text_Choose_file}" Clicked="BtnPick_Clicked" BackgroundColor="#85A0FF" TextColor="White" WidthRequest="60"/>
                 <Label  Text="{x:Static resources:Resource.text_choose}"    />
+                <!--<Label x:Name="fileName"  Text="{Binding fileName}" />-->
                 <Label x:Name="file_label" Text="{Binding file.Path}"/>
             </StackLayout>
         </ScrollView>

@@ -17,7 +17,8 @@ namespace OAuthNativeFlow
         protected async override void OnAppearing() {
             if (AuthenticationState.Authenticator != null)
             {
-                await Navigation.PushAsync(new MainPage());
+                //await Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new ItemsPage());
             }
 
         }

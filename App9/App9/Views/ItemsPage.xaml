@@ -12,11 +12,12 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{x:Static resources:Resource.text_add}" Clicked="AddItem_Clicked" />
         <ToolbarItem Text="{x:Static resources:Resource.text_maps}" Clicked="Maps_Clicked" />
-        
-        
+
+
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
+    <StackLayout
+        >
 
         <ListView x:Name="ItemsListView"                
                 VerticalOptions="FillAndExpand"
@@ -25,27 +26,51 @@
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
+                ItemSelected="OnItemSelected"
+                  BackgroundColor="#F4F4F4"
+                  >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding WorkName}"
-                                   BackgroundColor="Red"
-                                d:Text="{Binding workName}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Label Text="{Binding Agreed}" 
-                                d:Text="Item Agreed"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+                    <ViewCell >
+
+                        <StackLayout Margin="20" BackgroundColor="White" >
+                            <Frame HasShadow="False" CornerRadius="10" HorizontalOptions="Start" BackgroundColor="#85A0FF"
+                                   WidthRequest="40" HeightRequest="25" Padding="5" Margin="0,-7,0,0" 
+                                   >
+                                <Label Text="{Binding Agreed}" 
+                                       Padding="1"
+                                       Margin="0"
+                                       d:Text="Item Agreed"
+                                       LineBreakMode="NoWrap"
+                                       Style="{DynamicResource ListItemDetailTextStyle}"
+                                       FontSize="18" 
+                                       TextColor="White"                                                                              
+                                       
+                                           />
+                            </Frame>
+                            <Frame Padding="5"
+                                   Margin="10,0,0,0"
+                                   CornerRadius="0"
+                                   HasShadow="False">
+                                <Label Text="{Binding WorkName}"
+                                   BackgroundColor="White"
+                                   d:Text="{Binding workName}"
+                                   LineBreakMode="NoWrap" 
+                                   Style="{DynamicResource ListItemTextStyle}" 
+                                   FontSize="16"   
+                                   
+                                                                     
+                                   />
+                            </Frame>
+
+
+
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-    
+
 </ContentPage>

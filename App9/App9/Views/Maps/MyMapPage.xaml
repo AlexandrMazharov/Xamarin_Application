@@ -10,7 +10,9 @@
              >
     <maps:Map x:Name="map" />
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{x:Static resources:Resource.text_cancel}" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="{x:Static resources:Resource.text_cancel}"
+                     Clicked="Cancel_Clicked"                                          
+                     />
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>

@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="App9.Views.ItemDraftDetailPage1"
              xmlns:resources= "clr-namespace:App9.Resx"
+             Title="{x:Static resources:Resource.text_draft}"
              >
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="{x:Static resources:Resource.text_sent}" Clicked="ToolbarUpload_Clicked" />
@@ -16,7 +17,8 @@
     
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout>
+        <StackLayout
+            Padding="15">
                 <Label Text="{x:Static resources:Resource.text_draft}"/>
                 <Label Text="{x:Static resources:Resource.text_work_name}" FontSize="Medium"/>
                 <Label Text="{Binding Prompt.WorkName}" d:Text="WorkName???" FontSize="Small"/>
@@ -36,8 +38,14 @@
 
                 <Label Text="{x:Static resources:Resource.text_works}" FontSize="Medium"/>
                 <Label Text="{Binding Prompt.LinkFile}" d:Text="LinkFile???" FontSize="Small"/>
+            
+                <Button Text="{x:Static resources:Resource.text_open_file}" 
+                    Clicked="TapDownloadFile"
+                                CornerRadius="10"
+            WidthRequest="150"
+            TextColor="White"
+                BackgroundColor="#85A0FF"/>
 
-                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -141,11 +141,17 @@
   <data name="text_choose_direction" xml:space="preserve">
     <value>Choose a direction</value>
   </data>
+  <data name="text_Choose_file" xml:space="preserve">
+    <value>Choose file</value>
+  </data>
   <data name="text_dell" xml:space="preserve">
     <value>Dell</value>
   </data>
   <data name="text_direction" xml:space="preserve">
     <value>Direction</value>
+  </data>
+  <data name="text_download" xml:space="preserve">
+    <value>Download work</value>
   </data>
   <data name="text_draft" xml:space="preserve">
     <value>Draft</value>
@@ -165,11 +171,20 @@
   <data name="text_error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="text_link_error" xml:space="preserve">
+    <value>Something went wrong. Apparently an incorrect link.</value>
+  </data>
   <data name="text_maps" xml:space="preserve">
     <value>Maps</value>
   </data>
+  <data name="text_newApplication" xml:space="preserve">
+    <value>New Application</value>
+  </data>
   <data name="text_ok" xml:space="preserve">
     <value>Ok</value>
+  </data>
+  <data name="text_open_file" xml:space="preserve">
+    <value>Open work</value>
   </data>
   <data name="text_organization" xml:space="preserve">
     <value>Organization</value>

@@ -30,15 +30,15 @@ namespace App9.Views
         FileData file;
 
         List<string> CONFDIRECTION = new List<string>
-        {  "НАправление 1" , "НАправление 2", "НАправление 3", "НАправление 3"  } ;
-            protected async override void OnAppearing()
+        {  "НАправление 1" , "НАправление 2", "НАправление 3", "НАправление 3"  };
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
             picker.ItemsSource = CONFDIRECTION;
-            
+
             //picker.BindingContext = CONFDIRECTION;
             if (this.p != null)
-            {            
+            {
                 int index = 0;
                 for (int i = 0; i < CONFDIRECTION.Count; i++)
                 {
@@ -51,26 +51,27 @@ namespace App9.Views
                 entryOrg.Text = p.Organization;
                 picker.SelectedIndex = index;
 
-           }            
+            }
         }
-        private async void BtnSave_Clicked(object sender, EventArgs e) {
-            String lnkFile = "str";            
+        private async void BtnSave_Clicked(object sender, EventArgs e)
+        {
+            String lnkFile = "str";
             Prompt pr = new Prompt();
             pr.Agreed = "draft";
             pr.Direction = picker.Items[picker.SelectedIndex];
-                pr.Fio = entryFio.Text;
-                pr.LinkFile = lnkFile;
-                pr.WorkName = entryNameWork.Text;
-            pr.Organization = entryOrg.Text;            
-                
+            pr.Fio = entryFio.Text;
+            pr.LinkFile = lnkFile;
+            pr.WorkName = entryNameWork.Text;
+            pr.Organization = entryOrg.Text;
+
             App.Database.SaveItem(pr);
 
-           await DisplayAlert(Resx.Resource.text_success, Resx.Resource.text_prompt_save, Resx.Resource.text_ok);
-           
-            await Navigation.PushModalAsync(new MainPage());           
+            await DisplayAlert(Resx.Resource.text_success, Resx.Resource.text_prompt_save, Resx.Resource.text_ok);
+
+            await Navigation.PushModalAsync(new MainPage());
 
         }
-     
+
         /*
         private async void BtnAdd_Clicked(object sender, EventArgs e)        
         {
@@ -86,16 +87,18 @@ namespace App9.Views
         }
         */
 
-        
+
         private Prompt p;
 
-        public Item Item { get; set; 
+        public Item Item
+        {
+            get; set;
         }
-        
+
         public NewItemPage()
         {
             InitializeComponent();
-            
+
             Item = new Item
             {
                 Text = "New prompt",
@@ -107,7 +110,7 @@ namespace App9.Views
 
         public NewItemPage(Prompt p)
         {
-            InitializeComponent();         
+            InitializeComponent();
             this.p = p;
             Item = new Item { Text = "Your prompt" };
         }
@@ -124,8 +127,15 @@ namespace App9.Views
                     await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_enter_naprav, Resx.Resource.text_ok);
                 }
                 else
+
                 {
-                    String lnkFile = "str";
+                    string p = Path.GetFileName(file.FilePath);
+
+                    String lnkFile = file.FilePath;// file.GetStream();
+                    //String lnkFile = Path.GetFullPath(file.FilePath);// file.GetStream();
+
+
+                    //String lnkFile = "str";
 
                     Prompt pr = new Prompt();
                     pr.Agreed = "draft";
@@ -142,55 +152,73 @@ namespace App9.Views
                     await Navigation.PushModalAsync(new MainPage());
                 }
             }
-            catch { 
-            
-            }
-            }
+            catch
+            {
 
-         public static async  Task<Xamarin.Essentials.Location>  GetLocation() {         
-                var location = await Geolocation.GetLastKnownLocationAsync();
-                return location;
-         
+            }
+        }
+
+        public static async Task<Xamarin.Essentials.Location> GetLocation()
+        {
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            return location;
+
         }
         private async void BtnPick_Clicked(object sender, EventArgs e)
         {
+            if (file != null)
+            {
+                file = null;
+            }
             await CrossMedia.Current.Initialize();
             try
             {
                 file = await CrossFilePicker.Current.PickFile();// Plugin.Media.CrossMedia.Current.PPickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+                String fileName = file.FileName;
+
+                file_label.Text = file.FileName;
 
                 if (file == null)
                     return;
-                else {
+                else
+                {
 
-                    
-                        }
+
+                }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
         }
-      
+
+
+
         async void Sent_Clicked(object sender, EventArgs e)
         {
-            if (entryFio.Text == null) {
+            if (entryFio.Text == null)
+            {
                 await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_enter_authors, Resx.Resource.text_ok);
             }
-            else if (entryNameWork.Text == null) {
+            else if (entryNameWork.Text == null)
+            {
                 await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_enter_work_name, Resx.Resource.text_ok);
             }
-            else if (entryOrg.Text == null) {
-                await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_enter_org , Resx.Resource.text_ok);
+            else if (entryOrg.Text == null)
+            {
+                await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_enter_org, Resx.Resource.text_ok);
             }
-            else if (picker.SelectedIndex == -1) {
+            else if (picker.SelectedIndex == -1)
+            {
                 await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_enter_naprav, Resx.Resource.text_ok);
             }
-            else if (file == null) {
+            else if (file == null)
+            {
                 await DisplayAlert(Resx.Resource.text_error, "File not selected", Resx.Resource.text_ok);
 
             }
-            else {
+            else
+            {
                 try
                 {
                     double x = 1; double y = 1;
@@ -218,12 +246,13 @@ namespace App9.Views
                     //await DisplayAlert("Success", "Prompt Added Successfully", "OK");            
                     await Navigation.PushModalAsync(new MainPage());
                 }
-                catch {
-                    await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_try_again, Resx.Resource.text_ok);            
+                catch
+                {
+                    await DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_try_again, Resx.Resource.text_ok);
                 }
             }
-            
-            
+
+
         }
 
     }

@@ -35,7 +35,18 @@ namespace App9.Views
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }
+        
+            protected void TapDownloadFile(object sender, EventArgs e)
+        {
+            try
+            {
+                Device.OpenUri(new Uri(this.viewModel.Prompt.LinkFile));
+            }
+            catch {
+                 DisplayAlert(Resx.Resource.text_error, Resx.Resource.text_link_error, Resx.Resource.text_ok);
+            }
 
+        }
         private void ToolbarItem_Clicked(object sender, EventArgs e)
         {
 

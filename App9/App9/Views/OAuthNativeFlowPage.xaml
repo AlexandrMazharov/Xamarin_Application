@@ -2,18 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:OAuthNativeFlow"
-             x:Class="OAuthNativeFlow.OAuthNativeFlowPage">
+             x:Class="OAuthNativeFlow.OAuthNativeFlowPage"
+             NavigationPage.HasNavigationBar="False">
+    
     <StackLayout VerticalOptions="Center">
+        <Image Source="logo_osnovnoy_ENG.png"
+               HeightRequest="150"
+               />
         
         <Button 
-Text="Google"
+            CornerRadius="10"
+            WidthRequest="150"
+            TextColor="White"
+                BackgroundColor="#85A0FF"
+                    Text="Google"
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     Clicked="OnGoogleLoginClicked" />
 
         <Button 
-            Text="Facebook"
             
+            CornerRadius="10"
+            WidthRequest="150"
+            TextColor="White"
+                BackgroundColor="#85A0FF"
+            Text="Facebook"            
                     HorizontalOptions="Center"
                     VerticalOptions="CenterAndExpand"
                     Clicked="OnFacebookLoginClicked" />

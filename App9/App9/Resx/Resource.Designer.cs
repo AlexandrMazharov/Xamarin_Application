@@ -133,6 +133,15 @@ namespace App9.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Choose file.
+        /// </summary>
+        internal static string text_Choose_file {
+            get {
+                return ResourceManager.GetString("text_Choose_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Dell.
         /// </summary>
         internal static string text_dell {
@@ -147,6 +156,15 @@ namespace App9.Resx {
         internal static string text_direction {
             get {
                 return ResourceManager.GetString("text_direction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download work.
+        /// </summary>
+        internal static string text_download {
+            get {
+                return ResourceManager.GetString("text_download", resourceCulture);
             }
         }
         
@@ -205,6 +223,15 @@ namespace App9.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Something went wrong. Apparently an incorrect link..
+        /// </summary>
+        internal static string text_link_error {
+            get {
+                return ResourceManager.GetString("text_link_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Maps.
         /// </summary>
         internal static string text_maps {
@@ -214,11 +241,29 @@ namespace App9.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на New Application.
+        /// </summary>
+        internal static string text_newApplication {
+            get {
+                return ResourceManager.GetString("text_newApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Ok.
         /// </summary>
         internal static string text_ok {
             get {
                 return ResourceManager.GetString("text_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Open work.
+        /// </summary>
+        internal static string text_open_file {
+            get {
+                return ResourceManager.GetString("text_open_file", resourceCulture);
             }
         }
         

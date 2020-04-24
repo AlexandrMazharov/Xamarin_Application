@@ -68,17 +68,13 @@ namespace App9.Views
             if (AuthenticationState.Authenticator != null)
             {
                 var draftPrompt = App.Database.GetItems();
-                var sentPrompt = await firebaseHelper.GetAllPersons();
-               
-                var allPrompts = draftPrompt.Concat(sentPrompt);
-                
+                var sentPrompt = await firebaseHelper.GetAllPersons();               
+                var allPrompts = draftPrompt.Concat(sentPrompt);                
                 ItemsListView.ItemsSource = allPrompts;
-
                 if (viewModel.Items.Count == 0)
                     viewModel.LoadItemsCommand.Execute(null);
             }
-            else {
-                
+            else {                
                 await Navigation.PushAsync(new OAuthNativeFlowPage() ); }
         }
         }

@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="App9.Views.ItemDetailPage"
              xmlns:resources= "clr-namespace:App9.Resx"
-             Title="{Binding Title}">
+             Title="{x:Static resources:Resource.text_sent }">
     <ContentPage.ToolbarItems>
         
     </ContentPage.ToolbarItems>
@@ -37,7 +37,14 @@
 
             <Label Text="{x:Static resources:Resource.text_works}" FontSize="Medium"/>
         <Label Text="{Binding Prompt.LinkFile}" d:Text="LinkFile???"   FontSize="Small"/>
-                    
+            <Button Text="{x:Static resources:Resource.text_download}" 
+                    Clicked="TapDownloadFile"
+                                CornerRadius="10"
+            WidthRequest="150"
+            TextColor="White"
+                BackgroundColor="#85A0FF"/>
+
+
         </StackLayout>
     </ScrollView>
 
