@@ -88,6 +88,24 @@ namespace App9.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на All authors of the work.
+        /// </summary>
+        internal static string text_all_autors {
+            get {
+                return ResourceManager.GetString("text_all_autors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Application geography.
+        /// </summary>
+        internal static string text_app_geogr {
+            get {
+                return ResourceManager.GetString("text_app_geogr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Autors.
         /// </summary>
         internal static string text_autors {
@@ -277,6 +295,15 @@ namespace App9.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Responsible organization.
+        /// </summary>
+        internal static string text_organization_woks {
+            get {
+                return ResourceManager.GetString("text_organization_woks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Prompt Save Successfully.
         /// </summary>
         internal static string text_prompt_save {
@@ -313,6 +340,15 @@ namespace App9.Resx {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Sent.
+        /// </summary>
+        internal static string text_sented {
+            get {
+                return ResourceManager.GetString("text_sented", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Success.
         /// </summary>
         internal static string text_success {
@@ -336,6 +372,15 @@ namespace App9.Resx {
         internal static string text_work_name {
             get {
                 return ResourceManager.GetString("text_work_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Full name of the work.
+        /// </summary>
+        internal static string text_work_name_full {
+            get {
+                return ResourceManager.GetString("text_work_name_full", resourceCulture);
             }
         }
         

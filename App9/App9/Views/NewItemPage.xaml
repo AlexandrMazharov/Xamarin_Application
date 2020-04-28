@@ -9,7 +9,7 @@
              Title="{x:Static resources:Resource.text_newApplication}">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{x:Static resources:Resource.text_cancel}" Clicked="Cancel_Clicked" />
+        <!--<ToolbarItem Text="{x:Static resources:Resource.text_cancel}" Clicked="Cancel_Clicked" />-->
         <ToolbarItem Text="{x:Static resources:Resource.text_save}" Clicked="Save_Clicked" />
         <ToolbarItem Text="{x:Static resources:Resource.text_sent}" Clicked="Sent_Clicked" />
     </ContentPage.ToolbarItems>
@@ -22,11 +22,13 @@
 
                 <Label Text="{x:Static resources:Resource.text_your_request}" FontSize="Medium" />
                 <Label Text="{x:Static resources:Resource.text_autors}" FontSize="Small" />
-            <Entry  x:Name="entryFio" d:Text="FIO " FontSize="Small" />
+            <Entry  x:Name="entryFio" d:Text="FIO " FontSize="Small"
+                    Placeholder="{x:Static resources:Resource.text_all_autors}"/>
                 <!--<Entry Text="{Binding Item.Text}" x:Name="entryFio" d:Text="FIO " FontSize="Small" />-->
 
                 <Label Text="{x:Static resources:Resource.text_organization}" FontSize="Small" />
-            <Entry  x:Name="entryOrg" d:Text="Organization" FontSize="Small" />
+            <Entry  x:Name="entryOrg" d:Text="Organization" FontSize="Small"
+                    Placeholder="{x:Static resources:Resource.text_organization_woks}"/>
                 <!--<Entry Text="{Binding Item.Text}" x:Name="entryOrg" d:Text="Organization" FontSize="Small" />-->
             
                 <Label Text="{x:Static resources:Resource.text_direction}" FontSize="Small" />
@@ -36,7 +38,8 @@
 
                 <Label Text="{x:Static resources:Resource.text_work_name}" FontSize="Small" />
                 <!--<Entry Text="{Binding Item.Text}" x:Name="entryNameWork" d:Text="WorkName" FontSize="Small" />-->
-                <Entry  x:Name="entryNameWork" d:Text="WorkName" FontSize="Small" />
+                <Entry  x:Name="entryNameWork" d:Text="WorkName" FontSize="Small"
+                        Placeholder="{x:Static resources:Resource.text_work_name_full}"/>
             
                 <Button Text ="{x:Static resources:Resource.text_Choose_file}" Clicked="BtnPick_Clicked" BackgroundColor="#85A0FF" TextColor="White" WidthRequest="60"/>
                 <Label  Text="{x:Static resources:Resource.text_choose}"    />

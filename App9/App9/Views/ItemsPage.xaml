@@ -17,8 +17,9 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout
+        
         >
-
+        <ScrollView>
         <ListView x:Name="ItemsListView"                
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
@@ -35,17 +36,17 @@
 
                         <StackLayout Margin="20" BackgroundColor="White" >
                             <Frame HasShadow="False" CornerRadius="10" HorizontalOptions="Start" BackgroundColor="#85A0FF"
-                                   WidthRequest="40" HeightRequest="25" Padding="5" Margin="0,-7,0,0" 
+                                   WidthRequest="120" HeightRequest="25" Padding="5" Margin="0,-7,0,0" 
                                    >
-                                <Label Text="{Binding Agreed}" 
+                                <Label Text="{Binding TitleSatus}" 
+                                       x:Name="lbl_status"
                                        Padding="1"
                                        Margin="0"
                                        d:Text="Item Agreed"
                                        LineBreakMode="NoWrap"
                                        Style="{DynamicResource ListItemDetailTextStyle}"
                                        FontSize="18" 
-                                       TextColor="White"                                                                              
-                                       
+                                       TextColor="White"                                                                                                                     
                                            />
                             </Frame>
                             <Frame Padding="5"
@@ -71,6 +72,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        </ScrollView>
     </StackLayout>
 
 </ContentPage>

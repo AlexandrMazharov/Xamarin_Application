@@ -118,117 +118,125 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="String1" xml:space="preserve">
-    <value>File not selected</value>
+    <value>Файл не выбран</value>
+    <comment>Файл не выбран</comment>
   </data>
   <data name="text_add" xml:space="preserve">
-    <value>Add</value>
+    <value>Добавить</value>
+    <comment>Добавить</comment>
   </data>
   <data name="text_agreed" xml:space="preserve">
-    <value>Agreed</value>
+    <value>Одобрено</value>
+    <comment>Одобрено</comment>
   </data>
   <data name="text_all_autors" xml:space="preserve">
-    <value>All authors of the work</value>
+    <value>Все авторы работы</value>
   </data>
   <data name="text_app_geogr" xml:space="preserve">
-    <value>Application geography</value>
+    <value>География заявок</value>
   </data>
   <data name="text_autors" xml:space="preserve">
-    <value>Autors</value>
+    <value>Авторы</value>
+    <comment>Авторы</comment>
   </data>
   <data name="text_cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Назад</value>
+    <comment>Назад</comment>
   </data>
   <data name="text_change" xml:space="preserve">
-    <value>Change</value>
+    <value>Изменить</value>
+    <comment>Изменить</comment>
   </data>
   <data name="text_choose" xml:space="preserve">
-    <value>Choose</value>
+    <value>Выбран</value>
+    <comment>Выбран</comment>
   </data>
   <data name="text_choose_direction" xml:space="preserve">
-    <value>Choose a direction</value>
+    <value>Выберите направление</value>
+    <comment>Выберите направление</comment>
   </data>
   <data name="text_Choose_file" xml:space="preserve">
-    <value>Choose file</value>
+    <value>Выберите файл</value>
   </data>
   <data name="text_dell" xml:space="preserve">
-    <value>Dell</value>
+    <value>Удалить</value>
   </data>
   <data name="text_direction" xml:space="preserve">
-    <value>Direction</value>
+    <value>Направление</value>
   </data>
   <data name="text_download" xml:space="preserve">
-    <value>Download work</value>
+    <value>Скачать работу</value>
   </data>
   <data name="text_draft" xml:space="preserve">
-    <value>Draft</value>
+    <value>Черновик</value>
   </data>
   <data name="text_enter_authors" xml:space="preserve">
-    <value>Enter the authors</value>
+    <value>Авторы работы</value>
   </data>
   <data name="text_enter_naprav" xml:space="preserve">
-    <value>Enter the napravlinie</value>
+    <value>Направление</value>
   </data>
   <data name="text_enter_org" xml:space="preserve">
-    <value>Enter the organization</value>
+    <value>Организация</value>
   </data>
   <data name="text_enter_work_name" xml:space="preserve">
-    <value>Enter the work name</value>
+    <value>Название работы</value>
   </data>
   <data name="text_error" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="text_link_error" xml:space="preserve">
-    <value>Something went wrong. Apparently an incorrect link.</value>
+    <value>Что-то пошло не так. Видимо, неверная ссылка.</value>
   </data>
   <data name="text_maps" xml:space="preserve">
-    <value>Maps</value>
+    <value>Карта</value>
   </data>
   <data name="text_newApplication" xml:space="preserve">
-    <value>New Application</value>
+    <value>Новая заявка</value>
   </data>
   <data name="text_ok" xml:space="preserve">
-    <value>Ok</value>
+    <value>Ок</value>
   </data>
   <data name="text_open_file" xml:space="preserve">
-    <value>Open work</value>
+    <value>Открыть работу</value>
   </data>
   <data name="text_organization" xml:space="preserve">
-    <value>Organization</value>
+    <value>Организация</value>
   </data>
   <data name="text_organization_woks" xml:space="preserve">
-    <value>Responsible organization</value>
+    <value>Ответсвенная организация</value>
   </data>
   <data name="text_prompt_save" xml:space="preserve">
-    <value>Prompt Save Successfully</value>
+    <value>Заявка сохранена</value>
   </data>
   <data name="text_prompt_sent" xml:space="preserve">
-    <value>Prompt Added Successfully</value>
+    <value>Заявка отправлена</value>
   </data>
   <data name="text_save" xml:space="preserve">
-    <value>Save</value>
+    <value>Сохранить</value>
   </data>
   <data name="text_sent" xml:space="preserve">
-    <value>Sent</value>
+    <value>Отправить</value>
   </data>
   <data name="text_sented" xml:space="preserve">
-    <value>Sent</value>
+    <value>Отправлено</value>
   </data>
   <data name="text_success" xml:space="preserve">
-    <value>Success</value>
+    <value>Успешно</value>
   </data>
   <data name="text_try_again" xml:space="preserve">
-    <value>Something went wrong. Please try again</value>
+    <value>Что-то пошло не так. Пожалуйста, попробуйте еще раз</value>
   </data>
   <data name="text_works" xml:space="preserve">
-    <value>Work</value>
+    <value>Скачать работу по ссылке</value>
   </data>
   <data name="text_work_name" xml:space="preserve">
-    <value>Work name</value>
+    <value>Название работы</value>
   </data>
   <data name="text_work_name_full" xml:space="preserve">
-    <value>Full name of the work</value>
+    <value>Полное название работы</value>
   </data>
   <data name="text_your_request" xml:space="preserve">
-    <value>Your request</value>
+    <value>Ваши заявки</value>
   </data>
 </root>

@@ -7,14 +7,20 @@
              x:Class="App9.Views.Maps.MyMapPage"
               xmlns:resources= "clr-namespace:App9.Resx"
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+                Title="{x:Static resources:Resource.text_app_geogr}"
              >
     <maps:Map x:Name="map" />
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{x:Static resources:Resource.text_cancel}"
-                     Clicked="Cancel_Clicked"                                          
-                     />
+
+
+
 
     </ContentPage.ToolbarItems>
+    <!--
+      <ToolbarItem Text="{x:Static resources:Resource.text_cancel}" 
+                     Clicked="Cancel_Clicked"                                          
+                     />
+    -->
     <ContentPage.Content>
 
 

@@ -51,6 +51,9 @@ namespace App9.Views
                 entryOrg.Text = p.Organization;
                 picker.SelectedIndex = index;
 
+                //file = File.WriteAllBytes(p.LinkFile);// GET p.LinkFile;
+                file_label.Text= p.LinkFile;
+
             }
         }
         private async void BtnSave_Clicked(object sender, EventArgs e)

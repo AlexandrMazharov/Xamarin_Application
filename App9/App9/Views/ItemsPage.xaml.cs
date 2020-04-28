@@ -14,6 +14,13 @@ using System.Collections.ObjectModel;
 using System.IO;
 using Xamarin.Auth;
 using OAuthNativeFlow;
+using System.Resources;
+
+using System;
+using System.Globalization;
+using System.Resources;
+using System.Threading;
+using App9.Resx;
 
 namespace App9.Views
 {
@@ -22,6 +29,7 @@ namespace App9.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
+
         FirebaseHelper firebaseHelper = new FirebaseHelper();
         ItemsViewModel viewModel;
        // ListView itemsFirebase;
@@ -41,7 +49,7 @@ namespace App9.Views
                 return;
             if (item.Agreed == "draft") 
             {
-                Console.WriteLine("draft");
+                Console.WriteLine("{}draft");
                 await Navigation.PushAsync(new ItemDraftDetailPage1( new ItemDetailViewModel(item))); }
             else if (item.Agreed == "sent")
             {
@@ -54,12 +62,15 @@ namespace App9.Views
         }
         async void Maps_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new  NavigationPage(new  Maps.MyMapPage()));
+
+            await Navigation.PushAsync(new  Maps.MyMapPage());
+            //await Navigation.PushModalAsync(new  NavigationPage(new  Maps.MyMapPage()));
             
         }
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync( new NavigationPage(new NewItemPage()));
+            await Navigation.PushAsync( new NewItemPage());
+           // await Navigation.PushModalAsync( new NavigationPage(new NewItemPage()));
         }
 
         protected async override void OnAppearing()
@@ -67,10 +78,37 @@ namespace App9.Views
             base.OnAppearing();
             if (AuthenticationState.Authenticator != null)
             {
+                
+                
+                string t_d = Resource.text_draft;
+                
+                string t_s = Resource.text_sented;
+                //string t_d= rm.GetString("text_draft");
+
+                //string t_s= rm.GetString("text_sented");
+
+               
+
+
                 var draftPrompt = App.Database.GetItems();
+                
+                
                 var sentPrompt = await firebaseHelper.GetAllPersons();               
-                var allPrompts = draftPrompt.Concat(sentPrompt);                
+                var allPrompts = draftPrompt.Concat(sentPrompt);
+                foreach (var p in allPrompts)
+                {
+                    if (p.Agreed == "draft")
+
+                        p.TitleSatus = t_d;// (String)Resources["text_draft"];
+                    else if (p.Agreed == "sent")
+                    {
+                        p.TitleSatus = t_s;//(String)Resources["text_sented"];
+
+                    }
+                }
+             
                 ItemsListView.ItemsSource = allPrompts;
+                
                 if (viewModel.Items.Count == 0)
                     viewModel.LoadItemsCommand.Execute(null);
             }

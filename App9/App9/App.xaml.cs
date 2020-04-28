@@ -11,7 +11,7 @@ namespace App9
 {
     public partial class App : Application
     {
-        public const string DATABASE_NAME = "friends2.db";
+        public const string DATABASE_NAME = "pit.db";
         public static Views.DB.PropmtRepository database;        
         public static Views.DB.PropmtRepository Database
         {
@@ -34,9 +34,11 @@ namespace App9
             //await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
             //  MainPage = new OAuthNativeFlowPage();
             
-            MainPage = new NavigationPage(new OAuthNativeFlowPage());
+            //MainPage = new OAuthNativeFlowPage();
             
+           MainPage = new NavigationPage( new OAuthNativeFlowPage());
             //MainPage = new NavigationPage( new OAuthNativeFlowPage());
+            
 
         }
 

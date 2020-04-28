@@ -19,6 +19,7 @@ namespace App9.Views
         private String linkFile;
         private double x;
         private double y;
+        private String titleSatus;
 
 
         [PrimaryKey, AutoIncrement, Column("_id")]
@@ -32,8 +33,6 @@ namespace App9.Views
         public string LinkFile { get => linkFile; set => linkFile = value; }
         public double X { get => x; set => x = value; }
         public double Y { get => y; set => y = value; }
-
-     
-
+        public string TitleSatus { get => titleSatus; set => titleSatus = value; }
     }
 }

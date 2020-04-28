@@ -18,6 +18,9 @@ namespace OAuthNativeFlow
             if (AuthenticationState.Authenticator != null)
             {
                 //await Navigation.PushAsync(new MainPage());
+                //MainPage = new NavigationPage( new ItemsPage());
+                new NavigationPage(new ItemsPage());
+                
                 await Navigation.PushAsync(new ItemsPage());
             }
 
